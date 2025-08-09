@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrow Functions</title>
+  </head>
+
+  <body>
+
+    <script>
+      const regular_function = function(param, param2) {
+        console.log("hello");
+        return 5;
+      }
+
+      // Arrow Function
+      const arrow_function = (param, param2) => {
+        console.log("hello");
+        return 5;
+      };
+      arrow_function();
+
+
+      // Arrow Functions vs Regular Functions
+      // Shortcut: when arrow function has 1 param, the round brackets are optional.
+      // const one_param = (param) => {
+      const one_param = param => {
+        console.log(param + 1);
+      };
+      one_param(2);
+
+
+      // Can put arrow function in SAME line when arrow function has ONE LINE.
+      const one_line = () => {
+        return 2 + 3;
+      };
+
+      // Put on same line. Brackets and return statement are now OPTIONAL.
+      const oneLine = () => 2+ 3;
+      console.log(oneLine());
+
+
+      // Recommended to use arrow functions when passing a function into another function.
+      [
+        'make dinner', 
+        'wash dishes', 
+        'watch youtube'
+      ].forEach((value, index) => {
+        if(value === 'wash dishes') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+
+      // Arrow functions in objects
+      const object2 = {
+        method: () => {
+
+        }, 
+
+        // Shorthand Method Syntax
+        method() {
+
+        }
+      };
+    </script>
+  </body>
+</html>

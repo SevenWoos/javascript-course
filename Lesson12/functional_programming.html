@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functional Programming</title>
+  </head>
+
+  <body>
+
+    <script>
+      // Functional Programming = declarative programming paradigm/coding style.
+      // Express everything as functions(takes input --> returns output)
+
+      // NON-functional;
+      var name = "Nathan";
+      var greeting = "Hi, I'm ";
+      console.log(greeting + name);
+
+      // FUNCTIONAL and PURE
+      function greet(name) {
+        return `Hi, I'm ${name}`;
+      }
+      console.log(greet("Nathan Drake"));
+
+      // Pure Functions --> avoid SIDE EFFECTS(like printing). Should be RETURNING an output.
+
+      // NON-pure (uses global variable "name". NOT using any input. NOT returning output)
+      var name = "Nathan";
+      function greet_nonpure() {
+        console.log("Hi, I'm " + name);
+      }
+
+      // Higher Order Functions = functions that take other functions as INPUTS or can return another function as an output.
+      // EX: Map, Reduce, Filter
+
+      function make_adjectifier(adjective) {
+        return function(string) {
+          return adjective + " " + string;
+        };
+      }
+
+      var coolifier = make_adjectifier("cool");
+      console.log(coolifier("conference"));
+
+
+      // Another HOF
+      function make_multiplier(factor) {
+        // Inner function is returned
+        return function(number) {
+          return number * factor;
+        };
+      }
+
+      const multiply_by_two = make_multiplier(2);
+      const multiply_by_five = make_multiplier(5);
+
+      console.log(multiply_by_two(10));
+      console.log(multiply_by_five(7));
+
+
+      // Avoid iterating(for, while, loops)
+      // Use HOF(map, filter, reduce)
+      //map → “Change each fruit in a basket” 🍎→🍏
+      //filter → “Pick only the ripe fruits” 🍎🍌🍊 → 🍌🍊
+      //reduce → “Mash them into a smoothie” 🍌🍊 → 🍹
+
+      // MAP(transform each item--> take a list and apply function to each element)
+      let numbers = [1, 2, 3, 4];
+      let doubled = numbers.map(n => n*2);
+      console.log(doubled); //[2, 4, 6, 8]
+
+      // FILTER(keep only what MATCHES a condition)
+      let numbers2 = [1, 2, 3, 4, 5];
+      let evens = numbers.filter(n => n%2 === 0);
+      console.log(evens); //[2, 4]
+
+      // REDUCE(combine into a single value. Go through list and combine elements into one result)
+      let numbers3 = [1, 2, 3, 4];
+      let sum = numbers.reduce((acc, n) => acc+n, 0);
+      console.log(sum); //10
+
+
+      // Avoid mutability and use immutable data
+      var rooms = ["H1", "H2", "H3"];
+      rooms[2] = "H4"; // Changing in place = BAD
+
+      // No mutation(GOOD)
+      var rooms = ["H1", "H2", "H3"];
+      var newRooms = rooms.map(function(rm) {
+        if(rm === "H3") {
+          return "H4";
+        }
+        else {
+          return rm;
+        }
+      });
+      console.log(newRooms);
+      console.log(rooms);
+
+
+      // B4, we had to create a WHOLE NEW COPY of the array just to update one element in the array. NOT space-efficient. --> use persistent data structures
+
+      // Persistent Data Structures for Efficient Immutability
+      // Structural Sharing = Use a TREE, and create a new branch with the new NODE we wanted to replace.
+      // Libraries = Mori, Immutable.js
+    </script>
+  </body>
+</html>

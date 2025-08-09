@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8k</title>
+  </head>
+  
+  <body>
+    <button onclick="
+      playGame('heads');
+    ">
+      heads
+    </button>
+
+    <button onclick="
+      playGame('tails');
+    ">
+      tails
+    </button>
+
+    <script>
+      //Can use const here, since score is a reference to an object
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0, 
+        losses: 0
+        };
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        console.log(guess === result ? 'You win!' : 'You lose!');
+
+        if (guess === result) {
+          score.wins ++;
+        } else {
+          score.losses ++;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        console.log(score);
+      }
+
+    </script>
+  </body>
+</html>

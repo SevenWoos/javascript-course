@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete</title>
+    <link rel="stylesheet" href="styles/delete.css">
+  </head>
+
+  <body>
+    
+    <script>
+      function countWords(words) {
+        dictMap = {};
+
+        for(let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if(word in dictMap) {
+            dictMap[word]++;
+          } else {
+            dictMap[word] = 1;
+          }
+        }
+        return dictMap;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+    </script>
+  </body>
+</html>

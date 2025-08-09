@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11n</title>
+  </head>
+  
+  <body>
+    <script>
+      function countWords(words) {
+        const result = {};
+
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+
+        return result;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+
+      // Version 2
+      // function countWords(words) {
+      //   dictMap = {};
+
+      //   for(let i = 0; i < words.length; i++) {
+      //     let word = words[i];
+      //     if(word in dictMap) {
+      //       dictMap[word]++;
+      //     } else {
+      //       dictMap[word] = 1;
+      //     }
+      //   }
+      //   return dictMap;
+      // }
+    </script>
+  </body>
+
+</html>

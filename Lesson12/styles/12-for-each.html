@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Each Loop</title>
+  </head>
+
+  <body>
+
+    <script>
+      // For Each = preferred method to loop through array. Easier to read.
+      [
+        'make dinner', 
+        'wash dishes', 
+        'watch youtube'
+      ].forEach(function(value, index) {
+        // skipping in a for each loop. (continue)
+        if(value === 'wash dishes') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+
+      // Bored
+      [
+        'Thomas', 
+        'Edward', 
+        'Henry', 
+        "Gordon"
+      ].forEach(function(value, num) {
+        console.log(num);
+        console.log(value);
+      });
+
+      [
+        'James', 
+        'Percy', 
+        'Toby', 
+        'Duck'
+      ].forEach(function(engine) {
+        console.log(engine);
+      });
+
+
+      idk = ['Donald', 'Douglas'];
+      idk.forEach(function(engine) {
+        console.log(engine);
+      })
+    </script>
+  </body>
+</html>

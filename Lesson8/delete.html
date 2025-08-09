@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete</title>
+  </head>
+
+  <body>
+    <input placeholder="Name" class="js-name-input" 
+      onkeydown="
+        display_name();
+      ">
+
+    <button onclick="
+      display_name();
+    ">
+      Submit
+    </button>
+
+    <p class="js-message"></p>
+
+    <script>
+      function display_name() {
+        const input_element = document.querySelector('.js-name-input');
+
+        document.querySelector('.js-message')
+          .innerHTML = `Your name is ${input_element.value}`;
+      }
+    </script>
+  </body>
+</html>

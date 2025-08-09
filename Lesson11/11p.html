@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11p</title>
+  </head>
+  
+  <body>
+    <script>
+      let words = ['hello', 'world', 'search', 'good', 'search'];
+
+      //Set index to -1 at start , so we assume string 'search' does not exist in the array
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        word = words[i];
+        if (word === 'search') {
+          index = i;
+          break;
+        } 
+      }
+
+      console.log(index);
+
+      words = ['not', 'found'];
+      index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        word = words[i];
+        if (word === 'search') {
+          index = i;
+          break;
+        }
+      }
+
+      console.log(index);
+    </script>
+  </body>
+
+</html>

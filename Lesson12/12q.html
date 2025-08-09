@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12q</title>
+  </head>
+
+  <!-- Updated 12c -->
+  <body>
+    <button class="js-button">Start</button>
+
+    <script>
+      // Updated to use addEventListener
+      document.querySelector('.js-button')
+        .addEventListener('click', () => {
+          const button = document.querySelector('.js-button');
+
+        setTimeout(() => {
+          button.innerHTML = 'Finished!';
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

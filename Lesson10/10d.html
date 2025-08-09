@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10d</title>
+    <style>
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is_toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  
+  <body>
+   <button onclick="
+    const buttonElement = document.querySelector('.js-gaming-button');
+    if (buttonElement.classList.contains('is_toggled')) {
+      buttonElement.classList.remove('is_toggled');
+    } else {
+      buttonElement.classList.add('is_toggled');
+    }
+   " class="js-gaming-button toggle-button">
+      Gaming
+   </button>
+  </body>
+
+  <script>
+  </script>
+</html>

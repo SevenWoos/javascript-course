@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+
+  <body>
+    <button class="add-button">Add</button>
+
+    <button class="remove-button">Remove</button>
+    <script>
+      //Updated to use arrow functions and addEventListener
+      let messages = 2;
+
+      document.querySelector('.add-button')
+        .addEventListener('click', () => {
+          messages+=1;
+        })
+
+      document.querySelector('.remove-button')
+        .addEventListener('click', () => {
+          messages-=1;
+        })
+
+      setInterval(() => {
+        if (document.title === 'App') {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+        }, 1000);
+
+    </script>
+  </body>
+</html>

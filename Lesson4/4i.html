@@ -1,0 +1,50 @@
+<!-- Using HTML and CSS, try to copy the design on the right. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buttons</title>
+    <!-- Shift + tab to remove one indent -->
+    
+    <style>
+      .add-to-cart {
+        background-color: yellow;
+      }
+
+      .buy-now {
+        background-color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Adults Plain Cotton T-Shirt
+    </p>
+
+    <p>
+      Price: $7.99
+    </p>
+
+    <button class="add-to-cart" 
+    onclick="
+      alert('Added');
+    "
+    >
+      Add to cart
+    </button>
+
+    <button class="buy-now"
+    onclick="
+      console.log('Loading...');
+      alert('Purchased');
+    "
+    >
+      Buy now
+    </button>
+
+    <script>
+      console.log('Welcome!');
+    </script>
+  </body>
+</html>

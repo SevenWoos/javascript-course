@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12qd</title>
+  </head>
+
+  <body>
+    <button onclick="
+    updateButton();
+    " class="js-button">Start</button>
+    
+    <script>
+      // Update to use arrow functions and addEventListener
+      document.querySelector('.js-button')
+        .addEventListener('click', () => {
+          const button = document.querySelector('.js-button');
+          button.innerHTML = 'Loading...';
+
+          setTimeout(() => {
+            button.innerHTML = 'Finished';
+          }, 1000);
+        })
+    </script>
+  </body>
+</html>

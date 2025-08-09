@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Asynchrnous Code</title>
+</head>
+
+<body>
+
+  <script>
+     //A  function we want to run in the FUTURE. Based on ms.
+     // 1000ms = 1sec
+
+     // At 3000ms = 3sec
+     setTimeout(function() {
+      console.log('timeout');
+      console.log('timeout2');
+     }, 3000);
+
+
+     // Asynchronous Code = computer WONT WAIT for a line to finish b4 going to the next line.
+     // This gets displayed FIRST, before the timeout function.
+     console.log('next line');
+
+     // Synchronous Code = computer WAITS for a line to finish b4 going to the next line.
+
+
+     // SetInterval = async code that takes in (function we want to run in future, time) parameters. KEEPS running function EVERY INTERVAL.
+     setInterval(function() {
+      console.log('interval');
+     }, 3000);
+
+     console.log('next line2');
+
+
+     setInterval(function() {
+      console.log('second');
+     }, 4000);
+
+     console.log('first');
+  </script>
+</body>
+</html>

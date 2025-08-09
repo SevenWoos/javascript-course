@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete</title>
+  </head>
+
+  <body>
+    <button onclick="
+      console.log(`Cart Quantity: ${cart_quantity}`);
+    ">
+      Show Quantity
+    </button>
+
+    <button onclick="
+      update_cart(1);
+    ">
+      Add to Cart
+    </button>
+
+    <button onclick="
+      update_cart(2);
+    ">
+      +2
+    </button>
+
+    <button onclick="
+      update_cart(3);
+    ">
+      +3
+    </button>
+
+    <button onclick="
+      update_cart(4);
+    ">
+      +4
+    </button>
+
+    <button onclick="
+      update_cart(5);
+    ">
+      +5
+    </button>
+
+    <button onclick="
+      update_cart(-1);
+    ">
+      -1
+    </button>
+
+    <button onclick="
+      update_cart(-2);
+    ">
+      -2
+    </button>
+
+    <button onclick="
+      update_cart(-3);
+    ">
+      -3
+    </button>
+
+    <button onclick="
+      console.log('Cart was reset.');
+      cart_quantity = 0;
+      console.log(`Cart Quantity: ${cart_quantity}`);
+    ">
+      Reset Cart
+    </button>
+
+  </body>
+
+  <script>
+    let cart_quantity = 0;
+
+    function update_cart(change) {
+      if (cart_quantity + change > 10) {
+        alert(`The cart is full!`);
+        return;
+      }
+      if (cart_quantity + change < 0) {
+        alert(`Not enoigh items in the cart!`);
+        return;
+      }
+      else {
+        cart_quantity+=change;
+        console.log(cart_quantity);
+      }
+    }
+  </script>
+</html>

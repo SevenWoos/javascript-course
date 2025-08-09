@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filter</title>
+  </head>
+
+  <body>
+
+    <script>
+      // Filter takes in a function and returns a value.
+      // It creates a new array. If the function returns true, it will put value into array. Else if false, it won't.
+      console.log([1, -3, 5].filter((value, index) => {
+        // return true if positive
+
+        /*
+        if (value >= 0) {
+          return true;
+        }
+        else {
+          return false;
+        }
+        */ 
+        return value >= 0;
+      }));
+    </script>
+  </body>
+</html>

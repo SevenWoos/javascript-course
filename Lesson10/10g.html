@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10g</title>
+    <style>
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is_toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  
+  <body>
+   <button onclick="
+    toggleButton('.js-gaming-button');
+   " class="js-gaming-button toggle-button">
+      Gaming
+   </button>
+
+
+   <button onclick="
+    toggleButton('.js-music-button');
+   " class="js-music-button toggle-button">
+      Music
+   </button>
+
+
+   <button onclick="
+   toggleButton('.js-tech-button');
+   " class="js-tech-button toggle-button">
+      Tech
+   </button>
+
+  </body>
+
+  <script>
+    function toggleButton(selector) {
+      const buttonElement = document.querySelector(selector);
+      if (buttonElement.classList.contains('is_toggled')) {
+        buttonElement.classList.remove('is_toggled');
+      } else {
+        turnOffPreviousButton();
+
+        buttonElement.classList.add('is_toggled');
+      }
+    }
+
+    function turnOffPreviousButton() {
+      const previousButton = document.querySelector('.is_toggled');
+      if (previousButton) {
+        previousButton.classList.remove('is_toggled');
+      }
+    }
+
+  </script>
+</html>

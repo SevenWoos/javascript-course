@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+
+  <body>
+    <button onclick="
+      messages+=1;
+    ">Add</button>
+
+    <button onclick="
+      messages-=1;
+    ">Remove</button>
+    <script>
+      let messages = 2;
+
+      //Updated to use arrow functions
+      setInterval(() => {
+        if (document.title === 'App') {
+          if (messages <= 0) {
+            document.title = 'App';
+            messages = 0;
+            } else {
+              document.title = `(${messages}) New messages`;
+            }
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

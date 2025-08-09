@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Event Listener</title>
+  </head>
+
+  <body>
+    <button onclick="" class="js_button">Click</button>
+
+    <script>
+      // Every HTML element has method addEventListener()
+      // addEventListener() lets us run code when we interact with code.
+      const button_element = document.querySelector('.js_button');
+
+      // 2 params = event(type of interaction to listen to), function we want to run
+      // the word after on in "onclick" is usually our event -> "click"
+
+
+      button_element.addEventListener('click', () => {
+        console.log("click");
+      });
+
+
+      // Advantages of addEventListener 
+      // Can add MULTIPLE event listeners for an event.
+  
+      
+      button_element.addEventListener('click', () => {
+        console.log('click2');
+      })
+
+      // We can also REMOVE an event listener
+      const event_listener = () => {
+        console.log("click3");
+      };
+
+      button_element.addEventListener('click', event_listener);
+
+      button_element.removeEventListener('click', event_listener);
+
+      button_element.addEventListener('click', () => {
+        console.log("click4");
+      });
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12p</title>
+  </head>
+
+  <!-- Updated 12c -->
+  <body>
+    <button onclick="
+    updateButton();
+    " class="js-button">Start</button>
+
+    <script>
+      function updateButton() {
+        const button = document.querySelector('.js-button');
+        setTimeout(() => {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+### Run this cmd to create a JS virtual enviornment in terminal
+* npm init -y
+
+### Cmd to install node to run JS in vscode terminal
+* brew install node
+
+### Verify we have node and npm
+* node -v
+* npm -v
+
+
+### Use the node command followed by the filename to RUN JS filename
+# node yourfile.js

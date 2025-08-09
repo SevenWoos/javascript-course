@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11m</title>
+  </head>
+  
+  <body>
+    <script>
+      function minMax(nums) {
+        const obj = {
+          'min': null, 
+          'max': null};
+
+         for (let i = 0; i < nums.length; i++) {
+          if (nums[i] < obj.min || obj.min === null) {
+            obj.min = nums[i];
+          }
+          if (nums[i] >= obj.max || obj.max === null) {
+            obj.max = nums[i];
+          }
+         }
+
+         return obj;
+      }
+
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+    </script>
+  </body>
+
+</html>

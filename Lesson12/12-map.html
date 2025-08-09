@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map</title>
+  </head>
+
+  <body>
+
+    <script>
+      // Map takes in a function and runs it on EACH value. It returns a new array with the new values.
+
+      console.log([1, 1, 3].map((value, index)=> {
+        return value*2; 
+      }));
+
+      // Shortcut Version
+      console.log([1, 1, 3].map((value) => value*2));
+    </script>
+  </body>
+</html>

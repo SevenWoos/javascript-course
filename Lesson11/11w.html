@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11w</title>
+  </head>
+  
+  <body>
+    <script>
+      function findIndex(array, word) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            index = i;
+            return index;
+          }
+        }
+        return index;
+      }
+
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+      function unique(array) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+          let word = array[i];
+
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+        }
+        return result;
+      }
+
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+  </body>
+
+</html>
