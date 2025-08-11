@@ -714,5 +714,37 @@ const products = [
       "synology", 
       "DS224"
     ]
+  }, 
+  {
+    id: "id5", 
+    image: "images/products/msi_mag_monitor.jpg", 
+    name: "MSI MAG 321UP QD-OLED 32-inch QD-OLED 3840 x 2160 (UHD) Computer Monitor, 165Hz, Adaptive-Synch, HDMI, Display Port, VGA Port, VESA Mountable, Tilt, Height Adjustable, Speaker, 0.03ms, Black", 
+    rating: {
+      stars: 4.5, 
+      count: 116
+    }, 
+    priceCents: 78929, 
+    keyword: [
+      "monitor", 
+      "computer", 
+      "msi mag", 
+      "QD-OLED"
+    ]
+  }, 
+  {
+    id: "id6", 
+    image: "images/products/astrobot.jpg", 
+    name: "Astro Bot PS5", 
+    rating: {
+      stars: 5, 
+      count: 1309
+    }, 
+    priceCents: 5999, 
+    keyword: [
+      "astro bot", 
+      "ps5", 
+      "videogames", 
+      "video games"
+    ]
   }
 ];
