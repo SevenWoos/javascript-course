@@ -656,5 +656,63 @@ const products = [
       "apparel",
       "mens"
     ]
+  }, 
+  {
+    id: "id1", 
+    image: "images/products/backpack.jpg", 
+    name: "Black Backpack", 
+    rating: {
+      stars: 3, 
+      count: 2017
+    }, 
+    priceCents: 1999, 
+    keywords: [
+      'backpack', 
+      'school', 
+    ]
+  }, 
+  {
+    id: "id2", 
+    image: "images/products/umbrella.jpg", 
+    name: "Large Dark Green Umbrella", 
+    rating: {
+      stars: 4.5, 
+      count: 3456
+    }, 
+    priceCents: 999, 
+    keywords: [
+      'umbrella', 
+      'rain', 
+    ]
+  }, 
+  {
+    id: "id3", 
+    image: "images/products/bitcoin_miner.jpg", 
+    name: "New Canaan Avalon Q 90T (Cover Custom Tax) BTC Bitcoin Miner 110V 220V 1674W Quiet Home Crypto Asic Miner Include PSU Ship in Stock", 
+    rating: {
+      stars: 5, 
+      count: 5
+    }, 
+    priceCents: 91500, 
+    keywords: [
+      "bitcoin", 
+      "miner", 
+      "Canaan Avalon Q 90T"
+    ]
+  }, 
+
+  {
+    id: "id4", 
+    image: "images/products/synology_2.jpg", 
+    name: "Synology 2-Bay DiskStation DS224+ (Diskless)", 
+    rating: {
+      stars: 4.5, 
+      count: 8714
+    }, 
+    priceCents: 34449, 
+    keyword: [
+      "synology", 
+      "DS224"
+    ]
   }
 ];
