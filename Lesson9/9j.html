@@ -102,6 +102,8 @@
         calculation = eval(calculation);
         console.log(calculation);
 
+        displayCalculation();
+
         localStorage.setItem('calculation', calculation);
       ">
         =
@@ -118,6 +120,8 @@
       <button onclick="
         calculation = '';
         console.log(calculation);
+
+        displayCalculation();
 
         localStorage.setItem('calculation', calculation);
       ">
