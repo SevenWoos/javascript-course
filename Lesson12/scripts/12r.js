@@ -51,19 +51,19 @@ function showResetConfirmation() {
   document.querySelector('.js-reset-confirm-yes')
     .addEventListener('click', ()=> {
       resetScore();
-      hideReserConfirmation();
+      hideResetConfirmation();
     });
 
   document.querySelector('.js-reset-confirm-no')
     .addEventListener('click', () => {
-      hideReserConfirmation();
+      hideResetConfirmation();
     })
 }
 
 
 // A helper function (it helps us reuse the
 // code for hiding the confirmation message).
-function hideReserConfirmation() {
+function hideResetConfirmation() {
   document.querySelector('.js-reset-confirmation')
     .innerHTML = '';
 }
