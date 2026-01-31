@@ -4,6 +4,8 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   ties: 0
 };
 
+update_score_element();
+
 
 function pick_computer_move() {
   const random_number = Math.random();
@@ -20,52 +22,6 @@ function pick_computer_move() {
   }
   return computer_move;
 };
-
-
-document.querySelector('.js_rock_button')
-  .addEventListener('click', () => {
-    play_game('rock');
-  });
-
-  document.querySelector('.js_paper_button')
-    .addEventListener('click', () => {
-      play_game('paper');
-  });
-
-  document.querySelector('.js_scissors_button')
-    .addEventListener('click', () => {
-      play_game('scissors');
-  });
-
-  document.querySelector('.js_reset_score_button')
-  .addEventListener('click', () => {
-    reset_score();
-  });
-
-document.querySelector('.js_auto_play_button')
-  .addEventListener('click', () => {
-    auto_play();
-  });
-
-
-
-document.body.addEventListener('keydown', (event) => {
-  if (event.key === 'r') {
-    play_game('rock');
-  }
-  else if (event.key === 'p') {
-    play_game('paper')
-  }
-  else if (event.key === 's') {
-    play_game('scissors');
-  }
-  else if (event.key === 'a') {
-    auto_play();
-  }
-  else if (event.key === 'Backspace') {
-    reset_score();
-  }
-});
 
 
 function play_game(player_move) {
@@ -137,17 +93,6 @@ function update_score_element() {
 }
 
 
-function reset_score() {
-  localStorage.removeItem('score');
-
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-
-  update_score_element();
-}
-
-
 let is_autoplaying = false;
 let interval_id;
 
@@ -159,11 +104,103 @@ function auto_play() {
     }, 1000);
 
     is_autoplaying = true;
+
+    document.querySelector('.js_auto_play_button')
+      .innerHTML = `Stop Playing`;
   }
   else {
     clearInterval(interval_id);
     is_autoplaying = false;
+
+    document.querySelector('.js_auto_play_button')
+      .innerHTML = `Autoplay`;
   }
 }
 
-// localStorage.removeItem('score');
+
+function reset_score() {
+  localStorage.removeItem('score');
+
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+
+  update_score_element();
+}
+
+
+function showResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = `
+      Are you sure you want to reset the score?
+
+      <button class="js-reset-confirm-yes reset-confirm-button">Yes</button>
+
+      <button class="js-reset-confirm-no reset-confirm-button">No</button>
+    `;
+
+  document.querySelector('.js-reset-confirm-yes')
+    .addEventListener('click', () => {
+      reset_score();
+
+      hideResetConfirmation();
+    });
+  
+  document.querySelector('.js-reset-confirm-no')
+    .addEventListener('click', () => {
+      hideResetConfirmation();
+    });
+};
+
+
+function hideResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = '';
+};
+
+
+
+// Event Listeners
+document.querySelector('.js_rock_button')
+  .addEventListener('click', () => {
+    play_game('rock');
+});
+
+document.querySelector('.js_paper_button')
+  .addEventListener('click', () => {
+    play_game('paper');
+});
+
+document.querySelector('.js_scissors_button')
+  .addEventListener('click', () => {
+    play_game('scissors');
+});
+
+document.querySelector('.js_auto_play_button')
+  .addEventListener('click', () => {
+    auto_play();
+});
+
+document.querySelector('.js_reset_score_button')
+  .addEventListener('click', () => {
+    showResetConfirmation();
+});
+
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    play_game('rock');
+  }
+  else if (event.key === 'p') {
+    play_game('paper')
+  }
+  else if (event.key === 's') {
+    play_game('scissors');
+  }
+  else if (event.key === 'a') {
+    auto_play();
+  }
+  else if (event.key === 'Backspace') {
+    showResetConfirmation();
+  }
+});
