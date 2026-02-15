@@ -38,11 +38,13 @@ cart.forEach((cartItem) => {
             <span>
               Quantity: <span class="quantity-label">${cartItem.quantity}</span>
             </span>
-            <span class="update-quantity-link link-primary js-update-link" data-product-id=${matchingProduct.id}>
+            <span class="update-quantity-link link-primary js-update-link"
+              data-product-id=${matchingProduct.id}>
               Update
             </span>
             <input class="quantity-input">
-            <span class="save-quantity-link link-primary">Save</span>
+            <span class="save-quantity-link link-primary js-save-link" 
+              data-product-id=${matchingProduct.id}>Save</span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
               Delete
             </span>
@@ -134,5 +136,17 @@ document.querySelectorAll('.js-update-link')
 
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.classList.add('is-editing-quantity');
+    });
+  });
+
+  
+// 14j. Add event listeners to all save links.
+document.querySelectorAll('.js-save-link')
+  .forEach((saveLink) => {
+    saveLink.addEventListener('click', () => {
+      const productId = saveLink.dataset.productId;
+
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
+      container.classList.remove('is-editing-quantity');
     });
   });
