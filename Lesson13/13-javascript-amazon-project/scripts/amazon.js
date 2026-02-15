@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js';
+import {cart, addToCart, calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 
@@ -67,11 +67,7 @@ document.querySelector('.js-products-grid')
 
 
 function updateCartQuantity(productId) {
-  let cartQuantity = 0;
-
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
 
   document.querySelector('.js-cart-quantity')
     .innerHTML = cartQuantity;
@@ -104,11 +100,7 @@ document.querySelectorAll('.js-add-to-cart')
 
 // 14d. Update the Amazon Page CartQuantity when it loads. New function that does take in productId parameter.
 function updatePageCartQuantity() {
-  let cartQuantity = 0;
-
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
 
   document.querySelector('.js-page-cart-quantity')
     .innerHTML = cartQuantity;
