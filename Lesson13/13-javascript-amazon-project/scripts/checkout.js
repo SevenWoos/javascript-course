@@ -44,12 +44,12 @@ cart.forEach((cartItem) => {
               Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
             </span>
             <span class="update-quantity-link link-primary js-update-link"
-              data-product-id=${matchingProduct.id}>
+              data-product-id="${matchingProduct.id}">
               Update
             </span>
             <input class="quantity-input js-quantity-input-${matchingProduct.id}">
             <span class="save-quantity-link link-primary js-save-link" 
-              data-product-id=${matchingProduct.id}>Save</span>
+              data-product-id="${matchingProduct.id}">Save</span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
               Delete
             </span>
