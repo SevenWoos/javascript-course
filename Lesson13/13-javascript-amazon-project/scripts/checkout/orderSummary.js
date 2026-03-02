@@ -149,16 +149,16 @@ export function renderOrderSummary() {
     });
 
 
-  // 14c
-  function updateCartQuantity() {
-    // 14b. Calculate cart quantity and display it in checkout.
-    const cartQuantity = calculateCartQuantity();
+  // // 14c
+  // function updateCartQuantity() {
+  //   // 14b. Calculate cart quantity and display it in checkout.
+  //   const cartQuantity = calculateCartQuantity();
 
-    document.querySelector('.js-return-to-home-link')
-      .innerHTML = `${cartQuantity} items`;
-  };
+  //   document.querySelector('.js-return-to-home-link')
+  //     .innerHTML = `${cartQuantity} items`;
+  // };
 
-  updateCartQuantity();
+  // updateCartQuantity();
 
 
   // 14f. Get all "Update" links from page and add "click" event listener.
@@ -197,7 +197,7 @@ export function renderOrderSummary() {
         const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
         quantityLabel.innerHTML = newQuantity;
 
-        updateCartQuantity();
+        // updateCartQuantity();
       });
     });
 
