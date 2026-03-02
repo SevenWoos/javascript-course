@@ -88,6 +88,7 @@ export function updateQuantity(productId, newQuantity) {
   saveToStorage();
 };
 
+// Update Delivery Option for the cart when we click an option.
 export function updateDeliveryOption(productId, deliveryOptionId) {
   let matchingItem;
 
