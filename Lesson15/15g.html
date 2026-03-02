@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15g</title>
+  </head>
+
+  <body>
+    <!-- We can also rename a default export when we import. In 15f, when we "import isWeekend", change the name to something else like "import isSatSun" and use this new name to run the function.-->
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+      import isSatSun from './15g.js';
+
+
+      // Test function with different dates.
+      let testDate = dayjs();
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(1, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(2, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(3, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(4, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(5, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(6, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+
+      testDate = dayjs().add(7, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isSatSun(testDate));
+    </script>
+  </body>
+</html>

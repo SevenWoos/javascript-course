@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15e</title>
+  </head>
+
+  <body>
+    <!-- Create a function isWeekend(date) that takes a DayJS object, and returns whether the date is 'Saturday' or 'Sunday' -->
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      function isWeekend(date) {
+        const dayOfWeek = date.format('dddd');
+        return dayOfWeek === 'Satuday' || dayOfWeek === 'Sunday';
+      };
+
+      // Test function with different dates.
+      let testDate = dayjs();
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(1, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(2, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(3, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(4, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(5, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(6, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(7, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+    </script>
+  </body>
+</html>

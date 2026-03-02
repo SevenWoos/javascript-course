@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15b</title>
+  </head>
+
+  <body>
+    <!-- Calculate 1 month after today and display in the same format as 15a. -->
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      const today = dayjs();
+      const date = today.add(1, 'month');
+      
+      console.log(date.format('MMMM D'))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15c</title>
+  </head>
+
+  <body>
+    <!-- DayJS has a .subtract() method which subtracts time from a date. Calculate 1 month BEFORE today and display in same format as 15a. -->
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      const today = dayjs();
+      const date = today.subtract(1, 'month');
+      
+      console.log(date.format('MMMM D'))
+    </script>
+  </body>
+</html>

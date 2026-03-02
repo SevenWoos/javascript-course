@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15f</title>
+  </head>
+
+  <body>
+    <!-- Move isWeekend() into a separate file and use export default. Import this function in another file and run it. -->
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+      import isWeekend from './15f.js';
+
+
+      // Test function with different dates.
+      let testDate = dayjs();
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(1, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(2, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(3, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(4, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(5, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(6, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+
+      testDate = dayjs().add(7, 'day');
+      console.log(testDate.format('dddd, MMMM D'));
+      console.log(isWeekend(testDate));
+    </script>
+  </body>
+</html>
