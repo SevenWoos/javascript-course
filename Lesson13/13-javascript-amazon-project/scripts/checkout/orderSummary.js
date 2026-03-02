@@ -187,7 +187,10 @@ export function renderOrderSummary() {
         const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
         quantityLabel.innerHTML = newQuantity;
 
-        // updateCartQuantity();
+        // 15n. Use MVC to update page when updating and saving the quantity in the checkout page.
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
       });
     });
 
