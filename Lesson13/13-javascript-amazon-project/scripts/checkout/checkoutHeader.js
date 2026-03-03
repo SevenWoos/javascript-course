@@ -4,7 +4,7 @@ export function renderCheckoutHeader() {
   const cartQuantity = calculateCartQuantity();
 
   let checkoutHeaderHTML = `
-    <div class="checkout-header">
+    <div class="checkout-header js-checkout-header">
       <div class="header-content">
         <div class="checkout-header-left-section">
           <a href="amazon.html">
