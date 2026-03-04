@@ -36,6 +36,12 @@ describe('test suite: renderOrderSummary', () => {
     renderOrderSummary();
   });
 
+  // afterEach hook to cleanup the HTML after each spec.
+  afterEach(() => {
+    // Clear the HTML
+    document.querySelector('.js-test-container').innerHTML = ``;
+  });
+
   it('displays the cart', () => {
     expect(
       document.querySelectorAll('.js-cart-item-container').length
@@ -48,9 +54,6 @@ describe('test suite: renderOrderSummary', () => {
     expect(
       document.querySelector(`.js-product-quantity-${productId2}`).innerText
     ).toContain('Quantity: 1');
-
-    // Clear the HTML
-    document.querySelector('.js-test-container').innerHTML = ``;
   });
 
 
@@ -76,8 +79,5 @@ describe('test suite: renderOrderSummary', () => {
     // Is cart array updated.
     expect(cart.length).toEqual(1);
     expect(cart[0].productId).toEqual(productId2);
-
-    // Clear the HTML
-    document.querySelector('.js-test-container').innerHTML = ``;
   });
 });
