@@ -63,6 +63,15 @@ describe('test suite: renderOrderSummary', () => {
     expect(
       document.querySelector(`.js-product-name-${productId2}`).innerText
     ).toEqual('Intermediate Size Basketball');
+
+    // Check that the product prices are correctly displayed.
+    expect(
+      document.querySelector(`.js-product-price-${productId1}`).innerText
+    ).toEqual('$10.90');
+
+    expect(
+      document.querySelector(`.js-product-price-${productId2}`).innerText
+    ).toEqual('$20.95');
   });
 
 
@@ -92,5 +101,10 @@ describe('test suite: renderOrderSummary', () => {
     expect(
       document.querySelector(`.js-product-name-${productId2}`).innerText
     ).toEqual('Intermediate Size Basketball');
+
+    // Check that the product prices are correctly displayed.
+    expect(
+      document.querySelector(`.js-product-price-${productId2}`).innerText
+    ).toEqual('$20.95');
   });
 });
