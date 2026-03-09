@@ -1,17 +1,17 @@
 class Car {
-  brand;
-  model;
+  #brand;
+  #model;
   speed = 0;
   isTrunkOpen = false;
 
   constructor(carDetails) {
-    this.brand = carDetails.brand;
-    this.model = carDetails.model;
+    this.#brand = carDetails.brand;
+    this.#model = carDetails.model;
   }
 
   displayInfo() {
     const trunkStatus = this.isTrunkOpen ? 'open' : 'closed';
-    console.log(`${this.brand} ${this.model}, Speed ${this.speed} km/h, Trunk: ${trunkStatus}`);
+    console.log(`${this.#brand} ${this.#model}, Speed ${this.speed} km/h, Trunk: ${trunkStatus}`);
   };
 
   // Increases speed by 5
