@@ -36,6 +36,32 @@ class Product {
   getPrice() {
     return `$${formatCurrency(this.priceCents)}`;
   }
+
+  extraInfoHTML() {
+    return '';
+  }
+}
+
+// Clothing class inherits from Product class.
+class Clothing extends Product {
+  sizeChartLink;
+
+  constructor(productDetails) {
+    // Call the parent constructor with "super" keyword. 
+    super(productDetails);
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+
+  // Clothing overrides method from Product class.
+  // Polymorphism = using a method W/O knowing the class.
+  extraInfoHTML() {
+    // super.extraInfoHTML();
+    return `
+      <a href="${this.sizeChartLink}" target="_blank">
+        Size chart
+      </a>
+    `;
+  }
 }
 
 export const products = [
@@ -788,6 +814,11 @@ export const products = [
     ]
   }
 ].map((productDetails) => {
+  // Convert to Clothing class using discriminator property.
+  if (productDetails.type === 'clothing') {
+    return new Clothing(productDetails);
+  };
+
   // Convert each product object into a Product class.
   // Map takes array, transforms it with function , and outputs new array.
   return new Product(productDetails);
