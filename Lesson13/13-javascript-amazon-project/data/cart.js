@@ -24,7 +24,8 @@ function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-export function addToCart(productId, quantity) {
+// Add default parameter (quantity=1) to avoid null errors.
+export function addToCart(productId, quantity=1) {
   let matchingItem;
 
     // Check for duplicate items do we can increase quantity
