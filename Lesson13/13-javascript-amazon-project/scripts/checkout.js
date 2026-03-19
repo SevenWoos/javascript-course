@@ -15,7 +15,12 @@ async function loadPage() {
     // throw() manually creates an error. Value gets saved in catch() parameter.
     // throw 'error1';
   // Await lets you write async code like normal code. Can only be used inside async function and on PROMISES.
-  await loadProductsFetch();
+
+  // 18i. Use Promise.all to run both fetch functions.
+  await Promise.all([
+    loadProductsFetch(), 
+    loadCartFetch()
+  ]);
 
   // reject() parameter in Promise lets you create an error in the future.
   /*
@@ -27,9 +32,6 @@ async function loadPage() {
     });
   });
   */
-  
-  // 18h. Use async version of loadCart()
-  await loadCartFetch();
 
   // Catches and handles error.
   } catch (error) {
