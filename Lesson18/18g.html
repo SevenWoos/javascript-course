@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>18g</title>
+  </head>
+
+  <body>
+    <script>
+      async function postGreeting() {
+        try {
+          const response = await fetch('https://supersimplebackend.de/greeting', {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+
+          if (response.status_code >= 400) {
+            throw response;
+          };
+
+          const text = await response.text();
+          console.log(text);
+
+        } catch (error) {
+          if (error.status_code === 400) {
+            const errorMessage = await error.json();
+          } else {
+            console.log('Network error. Please try again later.');
+          }
+        }
+      };
+      postGreeting();
+    </script>
+  </body>
+</html>
