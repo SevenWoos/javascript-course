@@ -16,7 +16,7 @@ function pickComputerMove() {
     computerMove = 'paper';
   } else if (randomNumber >= 2/3 && randomNumber < 1) {
     computerMove = 'scissors';
-  };
+  }
 
   return computerMove;
 };
@@ -51,12 +51,12 @@ function playGame(playerMove) {
     } else if (computerMove === 'scissors') {
       result = 'Tie.';
     }
-  }
+  } 
 
   if (result === 'You win.') {
     score.wins += 1;
   } else if (result === 'You lose.') {
-    score.losses += 1;
+    score.losses += 1;  
   } else if (result === 'Tie.') {
     score.ties += 1;
   };
@@ -71,8 +71,8 @@ function playGame(playerMove) {
   document.querySelector('.js-moves')
     .innerHTML = `You
       <img src="images/${playerMove}-emoji.png" class="move-icon">
-      <img src="images/${computerMove}-emoji.png" class="move-icon"
-      Computer>
+      <img src="images/${computerMove}-emoji.png" class="move-icon">
+      Computer
     `;
 };
 
@@ -81,7 +81,7 @@ function updateScoreElement() {
     .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 };
 
-let intervalId = ''
+let intervalId;
 let isAutoPlaying = false;
 function autoPlay() {
   if (!isAutoPlaying) {
@@ -93,7 +93,7 @@ function autoPlay() {
     isAutoPlaying = true;
 
     document.querySelector('.js-auto-play-button')  
-      .innerHTML = 'Stop Playing';
+      .innerHTML = `Stop Playing`;
   } else {
     clearInterval(intervalId);
 
@@ -118,12 +118,12 @@ function showResetConfirmation() {
   document.querySelector('.js-reset-confirmation')  
     .innerHTML = `
       Are you sure you want to reset the score?
-      
+
       <button class="js-reset-confirm-yes reset-confirm-button">Yes</button>
 
       <button class="js-reset-confirm-no reset-confirm-button">No</button>
-      `;
-  
+    `;
+
   document.querySelector('.js-reset-confirm-yes')
     .addEventListener('click', () => {
 
@@ -134,9 +134,8 @@ function showResetConfirmation() {
 
   document.querySelector('.js-reset-confirm-no')
     .addEventListener('click', () => {
-
       hideResetConfirmation();
-  });
+    });
 };
 
 function hideResetConfirmation() {
@@ -145,7 +144,7 @@ function hideResetConfirmation() {
 };
 
 // Event Listeners
-document.querySelector('.js-rock-button') 
+document.querySelector('.js-rock-button')
   .addEventListener('click', () => {
     playGame('rock');
 });
@@ -168,4 +167,18 @@ document.querySelector('.js-auto-play-button')
 document.querySelector('.js-reset-score-button')
   .addEventListener('click', () => {
     showResetConfirmation();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    showResetConfirmation();
+  }
 });

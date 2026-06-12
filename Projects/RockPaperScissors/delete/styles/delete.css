@@ -17,13 +17,13 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 60px;
+  cursor: pointer;
   background-color: transparent;
   border: 3px solid white;
   margin-right: 10px;
-  cursor: pointer;
 }
 
-.result {
+.js-result {
   font-size: 25px;
   font-weight: bold;
   margin-top: 50px;
