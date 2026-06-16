@@ -17,9 +17,9 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 60px;
-  cursor: pointer;
   background-color: transparent;
   border: 3px solid white;
+  cursor: pointer;
   margin-right: 10px;
 }
 
@@ -33,15 +33,16 @@ body {
 .auto-play-button {
   background-color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   padding: 8px 15px;
+  cursor: pointer;
 }
 
 .reset-confirm-button {
   background-color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   padding: 8px 15px;
+  cursor: pointer;
 }
+
