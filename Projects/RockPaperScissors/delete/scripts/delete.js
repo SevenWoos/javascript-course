@@ -17,7 +17,6 @@ function pickComputerMove() {
   } else if (randomNumber >= 2/3 && randomNumber < 1) {
     computerMove = 'scissors';
   }
-
   return computerMove;
 };
 
@@ -59,15 +58,15 @@ function playGame(playerMove) {
     score.losses += 1;
   } else if (result === 'Tie.') {
     score.ties += 1;
-  }
-
-  localStorage.setItem('score', JSON.stringify(score));
+  };
 
   updateScoreElement();
 
+  localStorage.setItem('score', JSON.stringify(score)); 
+
   document.querySelector('.js-result')
     .innerHTML = result;
-
+  
   document.querySelector('.js-moves')
     .innerHTML = `You 
     <img src="images/${playerMove}-emoji.png" class="move-icon">
@@ -79,29 +78,6 @@ function playGame(playerMove) {
 function updateScoreElement() {
   document.querySelector('.js-score')
     .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-};
-
-let intervalId;
-let isAutoPlaying = false;
-function autoPlay() {
-  if (!isAutoPlaying) {
-    intervalId = setInterval(() => {
-      playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-
-    isAutoPlaying = true;
-
-    document.querySelector('.js-auto-play-button')
-      .innerHTML = `Stop Playing`;
-  } else {
-    clearInterval(intervalId);
-
-    isAutoPlaying = false;
-
-    document.querySelector('.js-auto-play-button')
-      .innerHTML = `AutoPlay`;
-  };
 };
 
 function resetScore() {
@@ -120,7 +96,6 @@ function showResetConfirmation() {
       Are you sure you want to reset the score?
 
       <button class="js-reset-confirm-yes reset-confirm-button">Yes</button>
-
       <button class="js-reset-confirm-no reset-confirm-button">No</button>
     `;
 
@@ -138,8 +113,31 @@ function showResetConfirmation() {
 };
 
 function hideResetConfirmation() {
-  document.querySelector('.js-reset-confirmation')  
+  document.querySelector('.js-reset-confirmation')
     .innerHTML = ``;
+};
+
+let intervalId;
+let isAutoPlaying = false;
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+
+    isAutoPlaying = true;
+
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = `Stop AutoPlaying`;
+  } else {
+    clearInterval(intervalId);
+
+    isAutoPlaying = false;
+
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = `Auto Play`;
+  }
 };
 
 // Event Listeners
@@ -158,14 +156,14 @@ document.querySelector('.js-scissors-button')
     playGame('scissors');
 });
 
-document.querySelector('.js-auto-play-button')
-  .addEventListener('click', () => {
-    autoPlay();
-});
-
 document.querySelector('.js-reset-score-button')
   .addEventListener('click', () => {
     showResetConfirmation();
+});
+
+document.querySelector('.js-auto-play-button')
+  .addEventListener('click', () => {
+    autoPlay();
 });
 
 document.body.addEventListener('keydown', (event) => {
@@ -174,7 +172,7 @@ document.body.addEventListener('keydown', (event) => {
   } else if (event.key === 'p') {
     playGame('paper');
   } else if (event.key === 's') {
-    playGame('scissors');
+    playGame('scissors')
   } else if (event.key === 'a') {
     autoPlay();
   } else if (event.key === 'Backspace') {
