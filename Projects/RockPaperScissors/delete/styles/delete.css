@@ -17,32 +17,31 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 60px;
-  cursor: pointer;
   background-color: transparent;
   border: 3px solid white;
   margin-right: 10px;
+  cursor: pointer;
 }
 
-.js-result {
-  margin-top: 50px;
-  font-weight: bold;
+.result {
   font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
 }
 
 .reset-score-button, 
 .auto-play-button {
   background-color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   padding: 8px 15px;
+  cursor: pointer;
 }
 
 .reset-confirm-button {
   background-color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   padding: 8px 15px;
+  cursor: pointer;
 }
-
