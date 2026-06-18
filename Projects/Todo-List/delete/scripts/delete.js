@@ -1,23 +1,22 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
   {
     task: 'make dinner', 
-    dueDate: '2026-02-06'
+    dueDate: '2026-06-01'
   }, 
 
   {
     task: 'wash dishes', 
-    dueDate: '2026-02-06'
+    dueDate: '2026=06-01'
   }
 ];
 
 renderTodoList();
 
-
 function renderTodoList() {
   let todoListHTML = ``;
 
   todoList.forEach((todoObject, index) => {
-    const { task, dueDate } = todoObject;
+    const {task, dueDate} = todoObject;
 
     let html = `
       <div>${task}</div>
@@ -33,7 +32,6 @@ function renderTodoList() {
   document.querySelector('.js-todo-grid')
     .innerHTML = todoListHTML;
 
-  
   document.querySelectorAll('.js-delete-todo-button')
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
@@ -44,9 +42,7 @@ function renderTodoList() {
         saveToStorage();
       });
     });
-  
 };
-
 
 function addTodo() {
   const taskInput = document.querySelector('.js-task-input');
@@ -54,7 +50,7 @@ function addTodo() {
 
   const dueDateInput = document.querySelector('.js-date-input');
   const dueDate = dueDateInput.value;
-  
+
   todoList.push(
     {
       task, 
@@ -70,14 +66,11 @@ function addTodo() {
   saveToStorage();
 };
 
-
 function saveToStorage() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
-
 
 document.querySelector('.js-add-todo-button')
   .addEventListener('click', () => {
     addTodo();
 });
-
