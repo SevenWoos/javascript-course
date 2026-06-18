@@ -6,7 +6,7 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || [
 
   {
     task: 'wash dishes', 
-    dueDate: '2026=06-01'
+    dueDate: '2026-06-01'
   }
 ];
 
@@ -44,6 +44,10 @@ function renderTodoList() {
     });
 };
 
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+};
+
 function addTodo() {
   const taskInput = document.querySelector('.js-task-input');
   const task = taskInput.value;
@@ -64,10 +68,6 @@ function addTodo() {
   renderTodoList();
 
   saveToStorage();
-};
-
-function saveToStorage() {
-  localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 document.querySelector('.js-add-todo-button')
