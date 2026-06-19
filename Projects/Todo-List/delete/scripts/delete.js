@@ -31,7 +31,7 @@ function renderTodoList() {
 
   document.querySelector('.js-todo-grid')
     .innerHTML = todoListHTML;
-
+  
   document.querySelectorAll('.js-delete-todo-button')
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
@@ -42,10 +42,6 @@ function renderTodoList() {
         saveToStorage();
       });
     });
-};
-
-function saveToStorage() {
-  localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 function addTodo() {
@@ -68,6 +64,10 @@ function addTodo() {
   renderTodoList();
 
   saveToStorage();
+};
+
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 document.querySelector('.js-add-todo-button')
