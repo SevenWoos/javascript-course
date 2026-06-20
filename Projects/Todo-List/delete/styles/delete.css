@@ -25,17 +25,17 @@ body {
 .add-todo-button {
   background-color: green;
   color: white;
-  font-size: 15px;
   border: none;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .delete-todo-button {
   background-color: darkred;
   color: white;
   border: none;
+  cursor: pointer;
   font-size: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
-  cursor: pointer;
 }

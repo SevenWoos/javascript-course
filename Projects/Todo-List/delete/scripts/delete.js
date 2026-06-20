@@ -1,12 +1,12 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
   {
     task: 'make dinner', 
-    dueDate: '2026-06-01'
+    dueDate: '2026-07-01'
   }, 
 
   {
     task: 'wash dishes', 
-    dueDate: '2026-06-01'
+    dueDate: '2026-07-01'
   }
 ];
 
@@ -16,7 +16,7 @@ function renderTodoList() {
   let todoListHTML = ``;
 
   todoList.forEach((todoObject, index) => {
-    const {task, dueDate} = todoObject;
+    const { task, dueDate } = todoObject;
 
     let html = `
       <div>${task}</div>
@@ -66,11 +66,11 @@ function addTodo() {
   dueDateInput.value = '';
 
   renderTodoList();
-
+  
   saveToStorage();
 };
 
-document.querySelector('.js-add-todo-button') 
+document.querySelector('.js-add-todo-button')
   .addEventListener('click', () => {
     addTodo();
 });
