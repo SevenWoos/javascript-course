@@ -12,7 +12,7 @@ body {
 }
 
 .todo-input-grid {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   align-items: stretch;
 }
 
@@ -26,16 +26,16 @@ body {
   background-color: green;
   color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .delete-todo-button {
   background-color: darkred;
   color: white;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
 }

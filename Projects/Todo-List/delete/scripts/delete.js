@@ -1,11 +1,11 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
   {
-    task: 'make dinner', 
+    task: 'wash dishes', 
     dueDate: '2026-07-01'
   }, 
 
   {
-    task: 'wash dishes', 
+    task: 'make dinner', 
     dueDate: '2026-07-01'
   }
 ];
@@ -66,7 +66,7 @@ function addTodo() {
   dueDateInput.value = '';
 
   renderTodoList();
-  
+
   saveToStorage();
 };
 
