@@ -18,23 +18,22 @@ function renderTodoList() {
   todoList.forEach((todoObject, index) => {
     const { task, dueDate } = todoObject;
 
-    let html = `
+    const html = `
       <div>${task}</div>
 
       <div>${dueDate}</div>
 
       <button class="delete-todo-button js-delete-todo-button">Delete</button>
     `;
-
     todoListHTML += html;
   });
 
   document.querySelector('.js-todo-grid')
     .innerHTML = todoListHTML;
 
-  document.querySelectorAll('.js-delete-todo-button')
+  document.querySelectorAll('.js-delete-todo-button') 
     .forEach((deleteButton, index) => {
-      deleteButton.addEventListener('click' , () => {
+      deleteButton.addEventListener('click', () => {
         todoList.splice(index, 1);
 
         renderTodoList();
@@ -55,12 +54,10 @@ function addTodo() {
   const dueDateInput = document.querySelector('.js-date-input');
   const dueDate = dueDateInput.value;
 
-  todoList.push(
-    {
-      task, 
-      dueDate
-    }
-  );
+  todoList.push({
+    task, 
+    dueDate
+  });
 
   taskInput.value = '';
   dueDateInput.value = '';
